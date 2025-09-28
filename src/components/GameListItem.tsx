@@ -1,6 +1,7 @@
 import PlatformList from "@/components/PlatformList";
 import CriticScore from "@/components/CriticScore";
 
+import { getCroppedImageUrl } from "@/utils/image";
 import { type Game } from "@/types/model";
 
 type GameListItemProps = {
@@ -11,7 +12,7 @@ export default function GameListItem({ game }: GameListItemProps) {
   return (
     <div className="card bg-base-300 shadow-sm">
       <figure>
-        <img src={game.background_image} />
+        <img src={getCroppedImageUrl(game.background_image)} />
       </figure>
       <div className="card-body">
         <div className="flex justify-between items-center gap-4">
