@@ -1,3 +1,5 @@
+import GameListItem from "@/components/GameListItem";
+
 import useGames from "@/hooks/useGames";
 
 export default function GameList() {
@@ -8,10 +10,10 @@ export default function GameList() {
   }
 
   return (
-    <ul>
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
       {data?.results.map((game) => (
-        <li key={game.id}>{game.name}</li>
+        <GameListItem key={game.id} game={game} />
       ))}
-    </ul>
+    </div>
   );
 }

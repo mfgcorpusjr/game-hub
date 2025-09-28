@@ -6,8 +6,8 @@ export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="flex justify-between items-center">
-      <img src={logoImg} alt="logo" className="w-14" />
+    <div className="flex justify-between items-center p-2">
+      <img src={logoImg} className="w-14" />
 
       <div className="flex items-center gap-2">
         <input
