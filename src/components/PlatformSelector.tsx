@@ -12,9 +12,7 @@ export default function PlatformSelector() {
     const platform = data?.results.find(
       (p) => p.id === parseInt(e.target.value)
     );
-    if (platform) {
-      setPlatform(platform);
-    }
+    setPlatform(platform);
   };
 
   if (error) {
