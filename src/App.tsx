@@ -1,8 +1,9 @@
 import Navbar from "@/components/Navbar";
 import GenreList from "@/components/GenreList";
-import GameList from "@/components/GameList";
+import GameHeading from "@/components/GameHeading";
 import PlatformSelector from "@/components/PlatformSelector";
 import SortSelector from "@/components/SortSelector";
+import GameList from "@/components/GameList";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           <GenreList />
         </aside>
         <main className="flex-1 space-y-4 p-2">
+          <GameHeading />
           <div className="flex gap-4">
             <PlatformSelector />
             <SortSelector />
