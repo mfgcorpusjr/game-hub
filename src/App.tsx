@@ -6,7 +6,7 @@ import SortSelector from "@/components/SortSelector";
 
 export default function App() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto space-y-4">
       <Navbar />
 
       <div className="flex">

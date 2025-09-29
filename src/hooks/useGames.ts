@@ -14,6 +14,7 @@ const useGames = () => {
           genres: query.genre?.id,
           parent_platforms: query.platform?.id,
           ordering: query.sortOrder,
+          search: query.searchText,
         },
       }),
   });
