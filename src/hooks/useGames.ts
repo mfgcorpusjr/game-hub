@@ -12,6 +12,7 @@ const useGames = () => {
       GamesAPI.getAll({
         params: {
           genres: query.genre?.id,
+          parent_platforms: query.platform?.id,
         },
       }),
   });

@@ -1,12 +1,4 @@
-import { type Game } from "@/types/model";
-import { type Genre } from "@/types/model";
-
-export type FetchGamesResponse = {
+export type FetchResponse<T> = {
+  results: T[];
   count: number;
-  results: Game[];
-};
-
-export type FetchGenresResponse = {
-  count: number;
-  results: Genre[];
 };

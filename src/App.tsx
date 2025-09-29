@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import GenreList from "@/components/GenreList";
 import GameList from "@/components/GameList";
+import PlatformSelector from "@/components/PlatformSelector";
 
 export default function App() {
   return (
@@ -11,7 +12,10 @@ export default function App() {
         <aside className="w-[250px] hidden lg:block p-2">
           <GenreList />
         </aside>
-        <main className="flex-1 p-2">
+        <main className="flex-1 space-y-4 p-2">
+          <div className="flex">
+            <PlatformSelector />
+          </div>
           <GameList />
         </main>
       </div>
