@@ -1,3 +1,5 @@
+import { twMerge } from "tailwind-merge";
+
 import { type Genre } from "@/types/model";
 import { getCroppedImageUrl } from "@/utils/image";
 import useGameQueryStore from "@/store/useGameQueryStore";
@@ -7,6 +9,7 @@ type GenreListItemProps = {
 };
 
 export default function GenreListItem({ genre }: GenreListItemProps) {
+  const selectedGenre = useGameQueryStore((state) => state.query.genre);
   const setGenre = useGameQueryStore((state) => state.setGenre);
 
   return (
@@ -18,7 +21,12 @@ export default function GenreListItem({ genre }: GenreListItemProps) {
         src={getCroppedImageUrl(genre.image_background)}
         className="w-10 aspect-square rounded"
       />
-      <div className="flex-1 group-hover:underline group-hover:underline-offset-4">
+      <div
+        className={twMerge(
+          "flex-1 group-hover:underline group-hover:underline-offset-4",
+          genre.id === selectedGenre?.id ? "underline font-bold" : ""
+        )}
+      >
         {genre.name}
       </div>
     </div>

@@ -10,17 +10,15 @@ export default function SortSelector() {
     { value: "-rating", label: "Average rating" },
   ];
 
+  const selectedSortOrder = useGameQueryStore((state) => state.query.sortOrder);
   const setSortOrder = useGameQueryStore((state) => state.setSortOrder);
 
   return (
     <select
       className="select"
-      defaultValue=""
+      value={selectedSortOrder ?? ""}
       onChange={(e) => setSortOrder(e.target.value)}
     >
-      <option value="" disabled={true}>
-        Order by
-      </option>
       {sortOrders.map((sortOrder) => (
         <option key={sortOrder.value} value={sortOrder.value}>
           {sortOrder.label}
