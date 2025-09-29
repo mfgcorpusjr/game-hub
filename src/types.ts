@@ -1,3 +1,16 @@
+export type FetchResponse<T> = {
+  results: T[];
+  count: number;
+  next: string | null;
+};
+
+export type Genre = {
+  id: number;
+  name: string;
+  slug: string;
+  image_background: string;
+};
+
 export type Platform = {
   id: number;
   slug: string;
@@ -10,11 +23,4 @@ export type Game = {
   background_image: string;
   parent_platforms: { platform: Platform }[];
   metacritic: number;
-};
-
-export type Genre = {
-  id: number;
-  name: string;
-  slug: string;
-  image_background: string;
 };

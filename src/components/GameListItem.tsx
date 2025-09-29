@@ -2,7 +2,7 @@ import PlatformIconList from "@/components/PlatformIconList";
 import CriticScore from "@/components/CriticScore";
 
 import { getCroppedImageUrl } from "@/utils/image";
-import { type Game } from "@/types/model";
+import { type Game } from "@/types";
 
 type GameListItemProps = {
   game: Game;

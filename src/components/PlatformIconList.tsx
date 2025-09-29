@@ -11,7 +11,7 @@ import { MdPhoneIphone, MdGamepad } from "react-icons/md";
 import { SiAtari, SiCommodore, SiSega } from "react-icons/si";
 import { BsNintendoSwitch, BsGlobe } from "react-icons/bs";
 
-import { type Platform } from "@/types/model";
+import { type Platform } from "@/types";
 
 type PlatformListProps = {
   platforms: Platform[];

@@ -1,6 +1,6 @@
 import { twMerge } from "tailwind-merge";
 
-import { type Genre } from "@/types/model";
+import { type Genre } from "@/types";
 import { getCroppedImageUrl } from "@/utils/image";
 import useGameQueryStore from "@/store/useGameQueryStore";
 

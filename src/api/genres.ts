@@ -1,6 +1,5 @@
 import api from "@/api";
-import { type FetchResponse } from "@/types/response";
-import { type Genre } from "@/types/model";
+import { type FetchResponse, type Genre } from "@/types";
 
 export const getAll = (): Promise<FetchResponse<Genre>> => {
   return api({

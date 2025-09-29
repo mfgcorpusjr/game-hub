@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-import { type Genre, type Platform } from "@/types/model";
+import { type Genre, type Platform } from "@/types";
 
 type GameQueryStore = {
   query: {

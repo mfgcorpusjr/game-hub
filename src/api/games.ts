@@ -1,8 +1,7 @@
 import { type AxiosRequestConfig } from "axios";
 
 import api from "@/api";
-import { type FetchResponse } from "@/types/response";
-import { type Game } from "@/types/model";
+import { type FetchResponse, type Game } from "@/types";
 
 export const getAll = (
   requestConfig: AxiosRequestConfig
