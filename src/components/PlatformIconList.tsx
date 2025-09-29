@@ -17,7 +17,7 @@ type PlatformListProps = {
   platforms: Platform[];
 };
 
-export default function PlatformList({ platforms }: PlatformListProps) {
+export default function PlatformIconList({ platforms }: PlatformListProps) {
   const iconMap: { [key: string]: IconType } = {
     pc: FaWindows,
     playstation: FaPlaystation,
