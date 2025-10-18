@@ -8,6 +8,5 @@ export type Response<T> = {
 export type Genre = {
   id: number;
   name: string;
-  games_count: number;
   image_background: string;
 };
