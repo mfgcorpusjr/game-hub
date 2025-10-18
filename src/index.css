@@ -3,6 +3,6 @@
 
 @layer base {
   body {
-    @apply px-2;
+    @apply px-2 pb-2;
   }
 }
