@@ -11,7 +11,7 @@ export default function ThemeSwitch() {
         checked={theme === "dark"}
         onChange={toggleTheme}
       />
-      Dark Mode
+      <span className="text-sm whitespace-nowrap">Dark Mode</span>
     </div>
   );
 }
