@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@layer base {
+  body {
+    @apply px-2;
+  }
+}
