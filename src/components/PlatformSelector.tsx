@@ -6,11 +6,14 @@ export default function PlatformSelector() {
   if (error) return null;
 
   return (
-    <select className="select">
-      <option value="">All Platforms</option>
-      {data?.results.map((platform) => (
-        <option key={platform.id}>{platform.name}</option>
-      ))}
-    </select>
+    <fieldset className="fieldset w-[250px]">
+      <legend className="fieldset-legend">Platforms:</legend>
+      <select className="select">
+        <option value="">All</option>
+        {data?.results.map((platform) => (
+          <option key={platform.id}>{platform.name}</option>
+        ))}
+      </select>
+    </fieldset>
   );
 }
