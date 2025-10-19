@@ -1,3 +1,5 @@
+import MovieSkeleton from "@/components/MovieSkeleton";
+
 import useMovies from "@/hooks/useMovies";
 import { getCroppedImageUrl } from "@/utils/image";
 
@@ -6,8 +8,10 @@ type MovieProps = {
 };
 
 export default function Movie({ id }: MovieProps) {
-  const { data, error } = useMovies(id);
+  const { data, isLoading, error } = useMovies(id);
   const first = data?.results[0];
+
+  if (isLoading) return <MovieSkeleton />;
 
   if (error || !first) return null;
 

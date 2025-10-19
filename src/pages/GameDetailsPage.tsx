@@ -23,7 +23,7 @@ export default function GameDetailsPage() {
         <AttributesList game={data} />
       </section>
 
-      <section className="flex-1 p-2">
+      <section className="flex-1 p-2 space-y-4">
         <Movie id={data.id} />
         <Screenshots id={data.id} />
       </section>
