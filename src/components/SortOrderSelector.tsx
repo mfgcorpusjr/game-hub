@@ -9,9 +9,9 @@ export default function SortOrderSelector() {
   ];
 
   return (
-    <fieldset className="fieldset w-[250px]">
+    <fieldset className="fieldset w-full md:w-[250px]">
       <legend className="fieldset-legend">Order by:</legend>
-      <select className="select">
+      <select className="select w-full">
         {sortOrders.map((sortOrder) => (
           <option key={sortOrder.value} value={sortOrder.value}>
             {sortOrder.label}
