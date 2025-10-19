@@ -6,6 +6,7 @@ export const getAll = (gameQuery: GameQuery): Promise<Response<Game>> => {
     params: {
       genres: gameQuery.genreId,
       parent_platforms: gameQuery.platformId,
+      ordering: gameQuery.sortOrder,
     },
   });
 };

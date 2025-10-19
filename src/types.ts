@@ -28,4 +28,5 @@ export type Genre = {
 export type GameQuery = {
   genreId?: number;
   platformId?: number;
+  sortOrder?: string;
 };
