@@ -1,6 +1,7 @@
 import ScreenshotSkeleton from "@/components/ScreenshotSkeleton";
 
 import useScreenshots from "@/hooks/useScreenshot";
+import { getCroppedImageUrl } from "@/utils/image";
 
 type ScreenshotsProps = {
   id: number;
@@ -20,7 +21,7 @@ export default function Screenshots({ id }: ScreenshotsProps) {
       {data?.results.map((screenshot) => (
         <img
           key={screenshot.id}
-          src={screenshot.image}
+          src={getCroppedImageUrl(screenshot.image)}
           className="object-cover w-full h-full"
         />
       ))}
