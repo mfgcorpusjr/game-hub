@@ -2,6 +2,7 @@ import Container from "@/components/Container";
 import Navbar from "@/components/Navbar";
 import GenreList from "@/components/GenreList";
 import Heading from "@/components/Heading";
+import PlatformSelector from "@/components/PlatformSelector";
 import GameList from "@/components/GameList";
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
         </aside>
         <main className="flex-1 space-y-8">
           <Heading />
+          <PlatformSelector />
           <GameList />
         </main>
       </div>
