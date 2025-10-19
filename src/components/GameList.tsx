@@ -24,7 +24,7 @@ export default function GameList() {
         <span className="block mx-auto mt-8 loading loading-spinner loading-xl" />
       }
     >
-      <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 p-3">
         {isLoading &&
           skeletons.map((skeleton) => <GameListItemSkeleton key={skeleton} />)}
 
