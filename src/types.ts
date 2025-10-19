@@ -4,6 +4,20 @@ export type Response<T> = {
   results: T[];
 };
 
+export type Game = {
+  id: number;
+  slug: string;
+  name: string;
+  background_image: string;
+  metacritic: number;
+  platforms: { platform: Platform }[];
+};
+
+export type Platform = {
+  id: number;
+  name: string;
+};
+
 export type Genre = {
   id: number;
   name: string;
