@@ -1,16 +1,17 @@
-import { type FormEvent, useRef } from "react";
+import { type FormEvent, useState } from "react";
 import { useNavigate } from "react-router";
 
 import useGameQueryStore from "@/stores/useGameQueryStore";
 
 export default function SearchInput() {
-  const searchRef = useRef<HTMLInputElement>(null);
+  const searchText = useGameQueryStore((state) => state.gameQuery.searchText);
   const setSearchText = useGameQueryStore((state) => state.setSearchText);
+  const [searchInput, setSearchInput] = useState(searchText ?? "");
   const navigate = useNavigate();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setSearchText(searchRef.current?.value.trim() || undefined);
+    setSearchText(searchInput.trim() || undefined);
     navigate("/");
   };
 
@@ -33,7 +34,12 @@ export default function SearchInput() {
             <path d="m21 21-4.3-4.3"></path>
           </g>
         </svg>
-        <input type="search" placeholder="Search games..." ref={searchRef} />
+        <input
+          type="search"
+          placeholder="Search games..."
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+        />
       </label>
     </form>
   );

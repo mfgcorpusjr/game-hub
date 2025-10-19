@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import PlatformIconList from "@/components/PlatformIconList";
 import CriticScore from "@/components/CriticScore";
 
@@ -10,7 +12,10 @@ type GameListItemProps = {
 
 export default function GameListItem({ game }: GameListItemProps) {
   return (
-    <li className="card bg-base-300 shadow-sm hover:scale-105 transition-transform duration-200 ease-in cursor-pointer">
+    <Link
+      to={`/games/${game.slug}`}
+      className="card bg-base-300 shadow-sm hover:scale-105 transition-transform duration-200 ease-in cursor-pointer"
+    >
       <figure>
         <img
           src={getCroppedImageUrl(game.background_image)}
@@ -28,6 +33,6 @@ export default function GameListItem({ game }: GameListItemProps) {
 
         <h2 className="text-xl font-bold">{game.name}</h2>
       </div>
-    </li>
+    </Link>
   );
 }
