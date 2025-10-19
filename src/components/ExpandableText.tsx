@@ -12,11 +12,11 @@ export default function ExpandableText({
   const [isExpanded, setIsExpanded] = useState(false);
 
   if (children.length <= maxLength) {
-    return <p className="text-gray-500">{children}</p>;
+    return <p>{children}</p>;
   }
 
   return (
-    <p className="text-gray-500 leading-7">
+    <p className="leading-7">
       {isExpanded ? children : `${children.slice(0, maxLength)}...`}
 
       <button

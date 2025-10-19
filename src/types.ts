@@ -4,16 +4,6 @@ export type Response<T> = {
   results: T[];
 };
 
-export type Game = {
-  id: number;
-  slug: string;
-  name: string;
-  description_raw: string;
-  background_image: string | null;
-  metacritic: number | null;
-  parent_platforms: { platform: Platform }[];
-};
-
 export type Platform = {
   id: number;
   name: string;
@@ -24,6 +14,23 @@ export type Genre = {
   id: number;
   name: string;
   image_background: string;
+};
+
+export type Publisher = {
+  id: number;
+  name: string;
+};
+
+export type Game = {
+  id: number;
+  slug: string;
+  name: string;
+  background_image: string | null;
+  metacritic: number | null;
+  parent_platforms: { platform: Platform }[];
+  description_raw: string;
+  genres: Genre[];
+  publishers: Publisher[];
 };
 
 export type GameQuery = {
