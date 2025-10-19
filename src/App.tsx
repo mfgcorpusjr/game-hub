@@ -16,7 +16,7 @@ export default function App() {
           <h3 className="text-lg font-bold mb-4">Genres</h3>
           <GenreList />
         </aside>
-        <main className="flex-1 space-y-8 p-2">
+        <main className="flex-1 space-y-6 p-2">
           <Heading />
           <div className="flex flex-col md:flex-row gap-4">
             <PlatformSelector />
