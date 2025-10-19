@@ -9,7 +9,7 @@ export type Game = {
   slug: string;
   name: string;
   background_image: string;
-  metacritic: number;
+  metacritic: number | null;
   parent_platforms: { platform: Platform }[];
 };
 

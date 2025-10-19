@@ -1,10 +1,12 @@
 import clsx from "clsx";
 
 type CriticScoreProps = {
-  score: number;
+  score: number | null;
 };
 
 export default function CriticScore({ score }: CriticScoreProps) {
+  if (!score) return null;
+
   return (
     <div
       className={clsx("badge badge-error", {
