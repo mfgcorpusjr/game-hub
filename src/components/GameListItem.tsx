@@ -26,7 +26,7 @@ export default function GameListItem({ game }: GameListItemProps) {
           <CriticScore score={game.metacritic} />
         </div>
 
-        <h3 className="text-xl font-bold">{game.name}</h3>
+        <h2 className="text-xl font-bold">{game.name}</h2>
       </div>
     </li>
   );
