@@ -12,7 +12,11 @@ export default function Movie({ id }: MovieProps) {
   if (error || !first) return null;
 
   return (
-    <video poster={getCroppedImageUrl(first.preview)} controls>
+    <video
+      poster={getCroppedImageUrl(first.preview)}
+      controls
+      className="w-full"
+    >
       <source src={first.data[480]} />
     </video>
   );

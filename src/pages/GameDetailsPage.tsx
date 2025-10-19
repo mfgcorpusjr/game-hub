@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import ExpandableText from "@/components/ExpandableText";
 import AttributesList from "@/components/AttributesList";
 import Movie from "@/components/Movie";
+import Screenshots from "@/components/Screenshots";
 
 import useGame from "@/hooks/useGame";
 
@@ -15,7 +16,7 @@ export default function GameDetailsPage() {
   if (error || !data) return null;
 
   return (
-    <main className="flex flex-col lg:flex-row mt-4">
+    <main className="flex flex-col lg:flex-row gap-8 mt-4">
       <section className="flex-1 p-2 space-y-8">
         <h1 className="text-3xl font-bold">{data.name}</h1>
         <ExpandableText>{data.description_raw}</ExpandableText>
@@ -24,6 +25,7 @@ export default function GameDetailsPage() {
 
       <section className="flex-1 p-2">
         <Movie id={data.id} />
+        <Screenshots id={data.id} />
       </section>
     </main>
   );

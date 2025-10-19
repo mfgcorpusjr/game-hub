@@ -49,3 +49,10 @@ export type Movie = {
     max: string;
   };
 };
+
+export type Screenshot = {
+  id: number;
+  image: string;
+  width: number;
+  height: number;
+};

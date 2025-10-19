@@ -1,5 +1,5 @@
 import api from "@/api";
-import type { Response, Game, GameQuery, Movie } from "@/types";
+import type { Response, Game, GameQuery, Movie, Screenshot } from "@/types";
 
 export const getAll = (
   pageParam: number,
@@ -22,4 +22,8 @@ export const get = (slug: string): Promise<Game> => {
 
 export const getMovies = (id: number): Promise<Response<Movie>> => {
   return api.get(`/games/${id}/movies`);
+};
+
+export const getScreenshots = (id: number): Promise<Response<Screenshot>> => {
+  return api.get(`/games/${id}/screenshots`);
 };
