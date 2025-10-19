@@ -1,5 +1,5 @@
 import api from "@/api";
-import type { Response, Game, GameQuery } from "@/types";
+import type { Response, Game, GameQuery, Movie } from "@/types";
 
 export const getAll = (
   pageParam: number,
@@ -16,6 +16,10 @@ export const getAll = (
   });
 };
 
-export const get = (slug: string | number): Promise<Game> => {
+export const get = (slug: string): Promise<Game> => {
   return api.get(`/games/${slug}`);
+};
+
+export const getMovies = (id: number): Promise<Response<Movie>> => {
+  return api.get(`/games/${id}/movies`);
 };

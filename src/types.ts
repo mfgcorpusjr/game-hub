@@ -39,3 +39,13 @@ export type GameQuery = {
   sortOrder?: string;
   searchText?: string;
 };
+
+export type Movie = {
+  id: number;
+  name: string;
+  preview: string;
+  data: {
+    480: string;
+    max: string;
+  };
+};

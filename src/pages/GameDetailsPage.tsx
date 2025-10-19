@@ -2,6 +2,7 @@ import { useParams } from "react-router";
 
 import ExpandableText from "@/components/ExpandableText";
 import AttributesList from "@/components/AttributesList";
+import Movie from "@/components/Movie";
 
 import useGame from "@/hooks/useGame";
 
@@ -21,7 +22,9 @@ export default function GameDetailsPage() {
         <AttributesList game={data} />
       </section>
 
-      <section className="flex-1 p-2">Right</section>
+      <section className="flex-1 p-2">
+        <Movie id={data.id} />
+      </section>
     </main>
   );
 }
