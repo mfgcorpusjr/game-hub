@@ -9,7 +9,7 @@ type AttributesListProps = {
 
 export default function AttributesList({ game }: AttributesListProps) {
   return (
-    <div className="grid md:grid-cols-2 gap-8">
+    <section className="grid md:grid-cols-2 gap-8">
       <AttributesListItem title="Platforms">
         <ul>
           {game.parent_platforms.map(({ platform }) => (
@@ -37,6 +37,6 @@ export default function AttributesList({ game }: AttributesListProps) {
           ))}
         </ul>
       </AttributesListItem>
-    </div>
+    </section>
   );
 }

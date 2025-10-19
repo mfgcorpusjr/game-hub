@@ -14,14 +14,14 @@ export default function GameDetailsPage() {
   if (error || !data) return null;
 
   return (
-    <div className="flex flex-col lg:flex-row mt-4">
-      <div className="flex-1 p-2 space-y-8">
+    <main className="flex flex-col lg:flex-row mt-4">
+      <section className="flex-1 p-2 space-y-8">
         <h1 className="text-3xl font-bold">{data.name}</h1>
         <ExpandableText>{data.description_raw}</ExpandableText>
         <AttributesList game={data} />
-      </div>
+      </section>
 
-      <div className="flex-1 p-2">Right</div>
-    </div>
+      <section className="flex-1 p-2">Right</section>
+    </main>
   );
 }
