@@ -4,9 +4,10 @@ import { type GameQuery } from "@/types";
 
 type GameQueryStore = {
   gameQuery: GameQuery;
-  setGenreId: (id: number) => void;
-  setPlatformId: (id: number) => void;
+  setGenreId: (genreId: number) => void;
+  setPlatformId: (platformId: number) => void;
   setSortOrder: (sortOrder: string) => void;
+  setSearchText: (searchText: string) => void;
 };
 
 const useGameQueryStore = create<GameQueryStore>((set) => ({
@@ -26,6 +27,10 @@ const useGameQueryStore = create<GameQueryStore>((set) => ({
     set((state) => ({
       gameQuery: { ...state.gameQuery, sortOrder: sortOrder || undefined },
     }));
+  },
+
+  setSearchText: (searchText: string) => {
+    set({ gameQuery: { searchText } });
   },
 }));
 

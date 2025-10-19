@@ -1,6 +1,22 @@
+import { type FormEvent, useRef } from "react";
+
+import useGameQueryStore from "@/stores/useGameQueryStore";
+
 export default function SearchInput() {
+  const searchRef = useRef<HTMLInputElement>(null);
+  const setSearchText = useGameQueryStore((state) => state.setSearchText);
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+
+    const value = searchRef.current?.value.trim();
+    if (value) {
+      setSearchText(value);
+    }
+  };
+
   return (
-    <form className="w-full">
+    <form className="w-full" onSubmit={handleSubmit}>
       <label className="input w-full rounded-full">
         <svg
           className="h-[1em] opacity-50"
@@ -18,7 +34,7 @@ export default function SearchInput() {
             <path d="m21 21-4.3-4.3"></path>
           </g>
         </svg>
-        <input type="search" placeholder="Search games..." />
+        <input type="search" placeholder="Search games..." ref={searchRef} />
       </label>
     </form>
   );

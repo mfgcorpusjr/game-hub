@@ -7,6 +7,7 @@ export const getAll = (gameQuery: GameQuery): Promise<Response<Game>> => {
       genres: gameQuery.genreId,
       parent_platforms: gameQuery.platformId,
       ordering: gameQuery.sortOrder,
+      search: gameQuery.searchText,
     },
   });
 };
