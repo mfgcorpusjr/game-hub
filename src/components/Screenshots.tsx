@@ -12,7 +12,11 @@ export default function Screenshots({ id }: ScreenshotsProps) {
   return (
     <section className="grid sm:grid-cols-2">
       {data?.results.map((screenshot) => (
-        <img key={screenshot.id} src={screenshot.image} />
+        <img
+          key={screenshot.id}
+          src={screenshot.image}
+          className="object-cover h-full"
+        />
       ))}
     </section>
   );
