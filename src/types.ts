@@ -10,12 +10,13 @@ export type Game = {
   name: string;
   background_image: string;
   metacritic: number;
-  platforms: { platform: Platform }[];
+  parent_platforms: { platform: Platform }[];
 };
 
 export type Platform = {
   id: number;
   name: string;
+  slug: string;
 };
 
 export type Genre = {
