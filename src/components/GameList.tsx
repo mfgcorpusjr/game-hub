@@ -2,6 +2,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 import GameListItem from "@/components/GameListItem";
 import GameListItemSkeleton from "@/components/GameListItemSkeleton";
+import Loading from "@/components/Loading";
 
 import useGames from "@/hooks/useGames";
 
@@ -20,9 +21,7 @@ export default function GameList() {
       dataLength={paginatedData?.length || 0}
       next={fetchNextPage}
       hasMore={hasNextPage}
-      loader={
-        <span className="block mx-auto mt-8 loading loading-spinner loading-xl" />
-      }
+      loader={<Loading className="mt-8" />}
     >
       <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 p-3">
         {isLoading &&

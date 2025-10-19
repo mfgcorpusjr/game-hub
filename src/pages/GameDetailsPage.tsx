@@ -4,6 +4,7 @@ import ExpandableText from "@/components/ExpandableText";
 import AttributesList from "@/components/AttributesList";
 import Movie from "@/components/Movie";
 import Screenshots from "@/components/Screenshots";
+import Loading from "@/components/Loading";
 
 import useGame from "@/hooks/useGame";
 
@@ -11,9 +12,9 @@ export default function GameDetailsPage() {
   const { slug } = useParams();
   const { data, isLoading, error } = useGame(slug!);
 
-  if (isLoading) return null;
+  if (isLoading) return <Loading className="mt-8" />;
 
-  if (error || !data) return null;
+  if (error || !data) throw Error;
 
   return (
     <main className="flex flex-col lg:flex-row gap-8 mt-4">
