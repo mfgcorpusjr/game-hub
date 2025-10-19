@@ -19,7 +19,7 @@ export default function GameListItem({ game }: GameListItemProps) {
         />
       </figure>
       <div className="card-body">
-        <div className="flex justify-between items-start gap-2 mb-2">
+        <div className="flex justify-between items-start gap-4 mb-2">
           <PlatformIconList
             platforms={game.parent_platforms.map(({ platform }) => platform)}
           />
