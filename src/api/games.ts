@@ -5,6 +5,7 @@ export const getAll = (gameQuery: GameQuery): Promise<Response<Game>> => {
   return api.get("/games", {
     params: {
       genres: gameQuery.genreId,
+      parent_platforms: gameQuery.platformId,
     },
   });
 };

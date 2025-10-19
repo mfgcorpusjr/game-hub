@@ -5,6 +5,7 @@ import { type GameQuery } from "@/types";
 type GameQueryStore = {
   gameQuery: GameQuery;
   setGenreId: (id: number) => void;
+  setPlatformId: (id: number) => void;
 };
 
 const useGameQueryStore = create<GameQueryStore>((set) => ({
@@ -12,6 +13,12 @@ const useGameQueryStore = create<GameQueryStore>((set) => ({
 
   setGenreId: (id: number) => {
     set((state) => ({ gameQuery: { ...state.gameQuery, genreId: id } }));
+  },
+
+  setPlatformId: (id: number) => {
+    set((state) => ({
+      gameQuery: { ...state.gameQuery, platformId: id || undefined },
+    }));
   },
 }));
 
