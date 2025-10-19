@@ -15,3 +15,7 @@ export const getAll = (
     },
   });
 };
+
+export const get = (slug: string | number): Promise<Game> => {
+  return api.get(`/games/${slug}`);
+};
