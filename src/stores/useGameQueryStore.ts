@@ -7,7 +7,7 @@ type GameQueryStore = {
   setGenreId: (genreId: number) => void;
   setPlatformId: (platformId?: number) => void;
   setSortOrder: (sortOrder?: string) => void;
-  setSearchText: (searchText: string) => void;
+  setSearchText: (searchText?: string) => void;
 };
 
 const useGameQueryStore = create<GameQueryStore>((set) => ({
@@ -29,7 +29,7 @@ const useGameQueryStore = create<GameQueryStore>((set) => ({
     }));
   },
 
-  setSearchText: (searchText: string) => {
+  setSearchText: (searchText?: string) => {
     set({ gameQuery: { searchText } });
   },
 }));

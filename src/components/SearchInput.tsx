@@ -8,11 +8,7 @@ export default function SearchInput() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-
-    const value = searchRef.current?.value.trim();
-    if (value) {
-      setSearchText(value);
-    }
+    setSearchText(searchRef.current?.value.trim() || undefined);
   };
 
   return (
