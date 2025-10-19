@@ -1,4 +1,5 @@
 import PlatformIconList from "@/components/PlatformIconList";
+import CriticScore from "@/components/CriticScore";
 
 import { type Game } from "@/types";
 import { getCroppedImageUrl } from "@/utils/image";
@@ -18,9 +19,13 @@ export default function GameListItem({ game }: GameListItemProps) {
         />
       </figure>
       <div className="card-body">
-        <PlatformIconList
-          platforms={game.parent_platforms.map(({ platform }) => platform)}
-        />
+        <div className="flex justify-between items-start gap-2 mb-2">
+          <PlatformIconList
+            platforms={game.parent_platforms.map(({ platform }) => platform)}
+          />
+          <CriticScore score={game.metacritic} />
+        </div>
+
         <h3 className="text-xl font-bold">{game.name}</h3>
       </div>
     </li>
