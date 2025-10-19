@@ -10,7 +10,7 @@ type GameListItemProps = {
 
 export default function GameListItem({ game }: GameListItemProps) {
   return (
-    <li className="card bg-base-300 shadow-sm">
+    <li className="card bg-base-300 shadow-sm hover:scale-105 transition-transform duration-200 ease-in cursor-pointer">
       <figure>
         <img
           src={getCroppedImageUrl(game.background_image)}
