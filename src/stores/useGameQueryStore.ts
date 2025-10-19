@@ -5,8 +5,8 @@ import { type GameQuery } from "@/types";
 type GameQueryStore = {
   gameQuery: GameQuery;
   setGenreId: (genreId: number) => void;
-  setPlatformId: (platformId: number) => void;
-  setSortOrder: (sortOrder: string) => void;
+  setPlatformId: (platformId?: number) => void;
+  setSortOrder: (sortOrder?: string) => void;
   setSearchText: (searchText: string) => void;
 };
 
@@ -17,15 +17,15 @@ const useGameQueryStore = create<GameQueryStore>((set) => ({
     set((state) => ({ gameQuery: { ...state.gameQuery, genreId } }));
   },
 
-  setPlatformId: (platformId: number) => {
+  setPlatformId: (platformId?: number) => {
     set((state) => ({
-      gameQuery: { ...state.gameQuery, platformId: platformId || undefined },
+      gameQuery: { ...state.gameQuery, platformId },
     }));
   },
 
-  setSortOrder: (sortOrder: string) => {
+  setSortOrder: (sortOrder?: string) => {
     set((state) => ({
-      gameQuery: { ...state.gameQuery, sortOrder: sortOrder || undefined },
+      gameQuery: { ...state.gameQuery, sortOrder },
     }));
   },
 

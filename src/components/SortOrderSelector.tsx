@@ -1,6 +1,7 @@
 import useGameQueryStore from "@/stores/useGameQueryStore";
 
 export default function SortOrderSelector() {
+  const sortOrder = useGameQueryStore((state) => state.gameQuery.sortOrder);
   const setSortOrder = useGameQueryStore((state) => state.setSortOrder);
 
   const sortOrders = [
@@ -17,7 +18,8 @@ export default function SortOrderSelector() {
       <legend className="fieldset-legend">Order by:</legend>
       <select
         className="select w-full"
-        onChange={(e) => setSortOrder(e.target.value)}
+        value={sortOrder ?? ""}
+        onChange={(e) => setSortOrder(e.target.value || undefined)}
       >
         {sortOrders.map((sortOrder) => (
           <option key={sortOrder.value} value={sortOrder.value}>

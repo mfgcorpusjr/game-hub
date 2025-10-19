@@ -3,6 +3,7 @@ import useGameQueryStore from "@/stores/useGameQueryStore";
 
 export default function PlatformSelector() {
   const { data, error } = usePlatforms();
+  const platformId = useGameQueryStore((state) => state.gameQuery.platformId);
   const setPlatformId = useGameQueryStore((state) => state.setPlatformId);
 
   if (error) return null;
@@ -12,9 +13,12 @@ export default function PlatformSelector() {
       <legend className="fieldset-legend">Platforms:</legend>
       <select
         className="select w-full"
-        onChange={(e) => setPlatformId(+e.target.value)}
+        value={platformId ?? ""}
+        onChange={(e) =>
+          setPlatformId(e.target.value ? +e.target.value : undefined)
+        }
       >
-        <option value={0}>All</option>
+        <option value="">All</option>
         {data?.results.map((platform) => (
           <option key={platform.id} value={platform.id}>
             {platform.name}
