@@ -2,6 +2,7 @@ import GenreList from "@/features/genre/components/GenreList"
 import Heading from "@/features/game/components/Heading"
 import PlatformSelector from "@/features/platform/components/PlatformSelector"
 import SortOrderSelector from "@/features/game/components/SortOrderSelector"
+import GameList from "@/features/game/components/GameList"
 
 export default function HomePage() {
   return (
@@ -18,6 +19,8 @@ export default function HomePage() {
 
           <SortOrderSelector />
         </div>
+
+        <GameList />
       </section>
     </main>
   )
