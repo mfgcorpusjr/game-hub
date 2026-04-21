@@ -7,14 +7,14 @@ import GameList from "@/features/game/components/GameList"
 export default function HomePage() {
   return (
     <main className="grid grid-cols-12 gap-8">
-      <aside className="hidden md:col-span-3 md:block">
+      <aside className="hidden md:col-span-3 md:block lg:col-span-2">
         <GenreList />
       </aside>
 
-      <section className="space-y-8 md:col-span-9">
+      <section className="col-span-12 space-y-8 md:col-span-9 lg:col-span-10">
         <Heading />
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col items-center gap-4 md:flex-row">
           <PlatformSelector />
 
           <SortOrderSelector />

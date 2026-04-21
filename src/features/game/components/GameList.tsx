@@ -9,14 +9,12 @@ export default function GameList() {
 
   if (error) return <p className="text-sm text-gray-500">{error.message}</p>
 
+  const paginatedData = data?.pages.flatMap((page) => page.results)
+
   return (
-    <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-      {data?.pages.map((page, i) => (
-        <React.Fragment key={i}>
-          {page.results.map((game) => (
-            <GameListItem key={game.id} game={game} />
-          ))}
-        </React.Fragment>
+    <section className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {paginatedData?.map((game) => (
+        <GameListItem key={game.id} game={game} />
       ))}
     </section>
   )

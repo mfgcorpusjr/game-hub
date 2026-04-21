@@ -18,11 +18,11 @@ export default function PlatformSelector() {
   }
 
   return (
-    <div className="space-y-2">
+    <div className="w-full space-y-2 md:w-60">
       <Label>Platforms:</Label>
 
       <Select>
-        <SelectTrigger className="w-60">
+        <SelectTrigger className="w-full">
           <SelectValue placeholder="All" />
         </SelectTrigger>
 
