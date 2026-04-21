@@ -16,7 +16,7 @@ export default function GameListItem({ game }: Props) {
         <img
           src={getCroppedImageUrl(game.background_image)}
           alt={game.name}
-          className="w-full object-cover"
+          className="h-96 w-full object-cover md:h-48"
         />
       </CardHeader>
 
