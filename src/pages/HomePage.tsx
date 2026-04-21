@@ -1,4 +1,5 @@
 import GenreList from "@/features/genre/components/GenreList"
+import Heading from "@/features/game/components/Heading"
 
 export default function HomePage() {
   return (
@@ -7,7 +8,9 @@ export default function HomePage() {
         <GenreList />
       </aside>
 
-      <section className="md:col-span-9">Section</section>
+      <section className="space-y-8 md:col-span-9">
+        <Heading />
+      </section>
     </main>
   )
 }
