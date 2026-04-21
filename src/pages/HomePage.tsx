@@ -1,5 +1,6 @@
 import GenreList from "@/features/genre/components/GenreList"
 import Heading from "@/features/game/components/Heading"
+import PlatformSelector from "@/features/platform/components/PlatformSelector"
 
 export default function HomePage() {
   return (
@@ -10,6 +11,10 @@ export default function HomePage() {
 
       <section className="space-y-8 md:col-span-9">
         <Heading />
+
+        <div className="flex items-center gap-4">
+          <PlatformSelector />
+        </div>
       </section>
     </main>
   )
