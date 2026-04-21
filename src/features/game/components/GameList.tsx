@@ -7,7 +7,7 @@ import useGames from "@/features/game/hooks/useGames"
 export default function GameList() {
   const { data, isLoading, error } = useGames()
 
-  console.log(data)
+  if (error) return <p className="text-sm text-gray-500">{error.message}</p>
 
   return (
     <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
