@@ -1,6 +1,7 @@
 import GenreList from "@/features/genre/components/GenreList"
 import Heading from "@/features/game/components/Heading"
 import PlatformSelector from "@/features/platform/components/PlatformSelector"
+import SortOrderSelector from "@/features/game/components/SortOrderSelector"
 
 export default function HomePage() {
   return (
@@ -14,6 +15,8 @@ export default function HomePage() {
 
         <div className="flex items-center gap-4">
           <PlatformSelector />
+
+          <SortOrderSelector />
         </div>
       </section>
     </main>
