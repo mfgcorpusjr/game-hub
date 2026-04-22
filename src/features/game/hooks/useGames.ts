@@ -19,6 +19,7 @@ const useGames = () => {
             parent_platforms: query.parentPlatformId,
           }),
           ...(query.ordering && { ordering: query.ordering }),
+          ...(query.search && { search: query.search }),
         },
       })
       return data

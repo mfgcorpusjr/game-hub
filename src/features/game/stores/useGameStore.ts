@@ -5,11 +5,13 @@ type GameStore = {
     genreId?: number
     parentPlatformId?: number
     ordering?: string
+    search?: string
   }
 
   setGenreId: (genreId?: number) => void
   setParentPlatformId: (parentPlatformId?: number) => void
   setOrdering: (ordering?: string) => void
+  setSearch: (search?: string) => void
 }
 
 const useGameStore = create<GameStore>()((set) => ({
@@ -17,6 +19,7 @@ const useGameStore = create<GameStore>()((set) => ({
     genreId: undefined,
     parentPlatformId: undefined,
     ordering: undefined,
+    search: undefined,
   },
 
   setGenreId: (genreId) =>
@@ -27,6 +30,16 @@ const useGameStore = create<GameStore>()((set) => ({
 
   setOrdering: (ordering) =>
     set((state) => ({ query: { ...state.query, ordering } })),
+
+  setSearch: (search) =>
+    set({
+      query: {
+        genreId: undefined,
+        parentPlatformId: undefined,
+        ordering: undefined,
+        search,
+      },
+    }),
 }))
 
 export default useGameStore
