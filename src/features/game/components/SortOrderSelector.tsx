@@ -20,6 +20,7 @@ const sortOrders = [
 ]
 
 export default function SortOrderSelector() {
+  const ordering = useGameStore((state) => state.query.ordering)
   const setOrdering = useGameStore((state) => state.setOrdering)
 
   return (
@@ -27,6 +28,7 @@ export default function SortOrderSelector() {
       <Label>Order By:</Label>
 
       <Select
+        value={ordering ?? "Relevance"}
         onValueChange={(value) =>
           setOrdering(value !== "Relevance" ? value : undefined)
         }

@@ -13,6 +13,8 @@ import useGameStore from "@/features/game/stores/useGameStore"
 
 export default function PlatformSelector() {
   const { data, isError } = usePlatforms()
+
+  const platformId = useGameStore((state) => state.query.platformId)
   const setPlatformId = useGameStore((state) => state.setPlatformId)
 
   if (isError) {
@@ -23,7 +25,10 @@ export default function PlatformSelector() {
     <div className="w-full space-y-2 md:w-60">
       <Label>Platforms:</Label>
 
-      <Select onValueChange={(val) => setPlatformId(+val || undefined)}>
+      <Select
+        value={platformId?.toString() ?? "0"}
+        onValueChange={(val) => setPlatformId(+val || undefined)}
+      >
         <SelectTrigger className="w-full">
           <SelectValue placeholder="All" />
         </SelectTrigger>
