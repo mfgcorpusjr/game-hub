@@ -15,6 +15,9 @@ const useGames = () => {
         params: {
           page: pageParam,
           ...(query.genreId && { genres: query.genreId }),
+          ...(query.parentPlatformId && {
+            parent_platforms: query.parentPlatformId,
+          }),
         },
       })
       return data

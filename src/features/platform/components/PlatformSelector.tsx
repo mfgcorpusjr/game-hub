@@ -9,9 +9,11 @@ import {
 } from "@/components/ui/select"
 
 import usePlatforms from "@/features/platform/hooks/usePlatforms"
+import useGameStore from "@/features/game/stores/useGameStore"
 
 export default function PlatformSelector() {
   const { data, isError } = usePlatforms()
+  const setParentPlatformId = useGameStore((state) => state.setParentPlatformId)
 
   if (isError) {
     return null
@@ -21,17 +23,17 @@ export default function PlatformSelector() {
     <div className="w-full space-y-2 md:w-60">
       <Label>Platforms:</Label>
 
-      <Select>
+      <Select onValueChange={(val) => setParentPlatformId(+val || undefined)}>
         <SelectTrigger className="w-full">
           <SelectValue placeholder="All" />
         </SelectTrigger>
 
         <SelectContent>
           <SelectGroup>
-            <SelectItem value="All">All</SelectItem>
+            <SelectItem value="0">All</SelectItem>
 
             {data?.results.map((platform) => (
-              <SelectItem key={platform.id} value={platform.slug}>
+              <SelectItem key={platform.id} value={platform.id.toString()}>
                 {platform.name}
               </SelectItem>
             ))}
