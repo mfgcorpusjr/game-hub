@@ -1,4 +1,5 @@
 import { type Platform } from "@/features/platform/utils/types"
+import { type Genre } from "@/features/genre/utils/types"
 
 export type Game = {
   id: number
@@ -8,4 +9,11 @@ export type Game = {
   parent_platforms: { platform: Platform }[]
   metacritic: number
   description_raw: string
+  genres: Genre[]
+  publishers: Publisher[]
+}
+
+type Publisher = {
+  id: number
+  name: string
 }

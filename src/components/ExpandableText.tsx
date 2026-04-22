@@ -18,12 +18,14 @@ export default function ExpandableText({ children, maxLength = 300 }: Props) {
   }
 
   return (
-    <p className="leading-7">
-      {isExpanded ? children : `${children.slice(0, maxLength)}...`}
+    <div>
+      <p className="leading-7">
+        {isExpanded ? children : `${children.slice(0, maxLength)}...`}
+      </p>
 
       <Button size="xs" onClick={handleToggle}>
         {isExpanded ? "Show less" : "Show more"}
       </Button>
-    </p>
+    </div>
   )
 }

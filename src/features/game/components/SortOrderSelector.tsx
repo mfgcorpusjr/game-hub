@@ -25,7 +25,7 @@ export default function SortOrderSelector() {
 
   return (
     <div className="w-full space-y-2 md:w-60">
-      <Label>Order By:</Label>
+      <Label className="text-muted-foreground">Order By:</Label>
 
       <Select
         value={ordering ?? "Relevance"}

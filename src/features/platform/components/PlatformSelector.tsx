@@ -23,7 +23,7 @@ export default function PlatformSelector() {
 
   return (
     <div className="w-full space-y-2 md:w-60">
-      <Label>Platforms:</Label>
+      <Label className="text-muted-foreground">Platforms:</Label>
 
       <Select
         value={platformId?.toString() ?? "0"}

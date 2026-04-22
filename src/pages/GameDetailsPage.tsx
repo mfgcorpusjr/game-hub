@@ -3,6 +3,7 @@ import { useParams, Navigate } from "react-router"
 import Spinner from "@/components/Spinner"
 import PlaceholderText from "@/components/PlaceholderText"
 import ExpandableText from "@/components/ExpandableText"
+import AttributeList from "@/features/game/components/AttributeList"
 
 import useGame from "@/features/game/hooks/useGame"
 
@@ -23,11 +24,13 @@ export default function GameDetailsPage() {
   }
 
   return (
-    <main className="flex flex-col gap-8 md:flex-row">
+    <main className="flex flex-col gap-8 lg:flex-row">
       <section className="flex-1 space-y-8">
         <h3 className="text-3xl font-bold">{game.name}</h3>
 
         <ExpandableText>{game.description_raw}</ExpandableText>
+
+        <AttributeList game={game} />
       </section>
 
       <section className="flex-1">Right Section</section>
