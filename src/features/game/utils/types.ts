@@ -26,3 +26,8 @@ export type Movie = {
     480: string
   }
 }
+
+export type Screenshot = {
+  id: number
+  image: string
+}

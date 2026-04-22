@@ -23,7 +23,7 @@ export default function Movie({ id }: Props) {
     <video
       poster={getCroppedImageUrl(movie.preview)}
       controls
-      className="h-96 w-full object-cover"
+      className="h-96 w-full rounded object-cover"
     >
       <source src={movie.data[480]} />
     </video>

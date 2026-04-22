@@ -5,6 +5,7 @@ import PlaceholderText from "@/components/PlaceholderText"
 import ExpandableText from "@/components/ExpandableText"
 import AttributeList from "@/features/game/components/AttributeList"
 import Movie from "@/features/game/components/Movie"
+import Screenshots from "@/features/game/components/Screenshots"
 
 import useGame from "@/features/game/hooks/useGame"
 
@@ -36,6 +37,8 @@ export default function GameDetailsPage() {
 
       <section className="flex-1 space-y-4">
         <Movie id={game.id} />
+
+        <Screenshots id={game.id} />
       </section>
     </main>
   )
