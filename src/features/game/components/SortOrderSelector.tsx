@@ -8,6 +8,8 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
+import useGameStore from "@/features/game/stores/useGameStore"
+
 const sortOrders = [
   { value: "Relevance", name: "Relevance" },
   { value: "-added", name: "Date added" },
@@ -18,11 +20,17 @@ const sortOrders = [
 ]
 
 export default function SortOrderSelector() {
+  const setOrdering = useGameStore((state) => state.setOrdering)
+
   return (
     <div className="w-full space-y-2 md:w-60">
       <Label>Order By:</Label>
 
-      <Select>
+      <Select
+        onValueChange={(value) =>
+          setOrdering(value !== "Relevance" ? value : undefined)
+        }
+      >
         <SelectTrigger className="w-full">
           <SelectValue placeholder="Relevance" />
         </SelectTrigger>
