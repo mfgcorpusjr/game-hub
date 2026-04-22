@@ -1,21 +1,14 @@
-# React + TypeScript + Vite + shadcn/ui
+## Game Hub
 
-This is a template for a new Vite project with React, TypeScript, and shadcn/ui.
+### Live Demo
+A working version of this app is available at https://game-hub-8laf.vercel.app/
 
-## Adding components
-
-To add components to your app, run the following command:
-
-```bash
-npx shadcn@latest add button
-```
-
-This will place the ui components in the `src/components` directory.
-
-## Using components
-
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button"
-```
+### Key Dependencies
+- React 19
+- Typescript
+- RAWG API (https://rawg.io/)
+- React Router
+- Zustand
+- Tanstack Query
+- Shadcn/ui
+- Tailwind
