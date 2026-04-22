@@ -15,7 +15,7 @@ export default function GameList() {
   const paginatedData = data?.pages.flatMap((page) => page.results)
 
   if (paginatedData?.length === 0) {
-    return <PlaceholderText text="No game found" />
+    return <PlaceholderText text="Game not found" />
   }
 
   return (

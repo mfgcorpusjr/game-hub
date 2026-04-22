@@ -12,6 +12,7 @@ type GameStore = {
   setPlatformId: (platformId?: number) => void
   setOrdering: (ordering?: string) => void
   setSearch: (search?: string) => void
+  resetQuery: () => void
 }
 
 const useGameStore = create<GameStore>()((set) => ({
@@ -38,6 +39,16 @@ const useGameStore = create<GameStore>()((set) => ({
         platformId: undefined,
         ordering: undefined,
         search,
+      },
+    }),
+
+  resetQuery: () =>
+    set({
+      query: {
+        genreId: undefined,
+        platformId: undefined,
+        ordering: undefined,
+        search: undefined,
       },
     }),
 }))
