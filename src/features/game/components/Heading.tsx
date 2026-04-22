@@ -3,7 +3,7 @@ import usePlatform from "@/features/platform/hooks/usePlatform"
 import useGenre from "@/features/genre/hooks/useGenre"
 
 export default function Heading() {
-  const platformId = useGameStore((state) => state.query.parentPlatformId)
+  const platformId = useGameStore((state) => state.query.platformId)
   const platform = usePlatform(platformId)
 
   const genreId = useGameStore((state) => state.query.genreId)

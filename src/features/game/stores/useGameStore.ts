@@ -3,13 +3,13 @@ import { create } from "zustand"
 type GameStore = {
   query: {
     genreId?: number
-    parentPlatformId?: number
+    platformId?: number
     ordering?: string
     search?: string
   }
 
   setGenreId: (genreId?: number) => void
-  setParentPlatformId: (parentPlatformId?: number) => void
+  setPlatformId: (platformId?: number) => void
   setOrdering: (ordering?: string) => void
   setSearch: (search?: string) => void
 }
@@ -17,7 +17,7 @@ type GameStore = {
 const useGameStore = create<GameStore>()((set) => ({
   query: {
     genreId: undefined,
-    parentPlatformId: undefined,
+    platformId: undefined,
     ordering: undefined,
     search: undefined,
   },
@@ -25,8 +25,8 @@ const useGameStore = create<GameStore>()((set) => ({
   setGenreId: (genreId) =>
     set((state) => ({ query: { ...state.query, genreId } })),
 
-  setParentPlatformId: (parentPlatformId) =>
-    set((state) => ({ query: { ...state.query, parentPlatformId } })),
+  setPlatformId: (platformId) =>
+    set((state) => ({ query: { ...state.query, platformId } })),
 
   setOrdering: (ordering) =>
     set((state) => ({ query: { ...state.query, ordering } })),
@@ -35,7 +35,7 @@ const useGameStore = create<GameStore>()((set) => ({
     set({
       query: {
         genreId: undefined,
-        parentPlatformId: undefined,
+        platformId: undefined,
         ordering: undefined,
         search,
       },
