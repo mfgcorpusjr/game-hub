@@ -23,7 +23,9 @@ export default function GameListItem({ game }: Props) {
       <CardContent className="space-y-4">
         <div className="flex items-center justify-between gap-4">
           <GamePlatforms
-            platforms={game.parent_platforms.map(({ platform }) => platform)}
+            platforms={
+              game.parent_platforms?.map(({ platform }) => platform) ?? []
+            }
           />
 
           <CriticScore score={game.metacritic} />
