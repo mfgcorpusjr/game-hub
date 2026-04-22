@@ -4,6 +4,7 @@ import Spinner from "@/components/Spinner"
 import PlaceholderText from "@/components/PlaceholderText"
 import ExpandableText from "@/components/ExpandableText"
 import AttributeList from "@/features/game/components/AttributeList"
+import Movie from "@/features/game/components/Movie"
 
 import useGame from "@/features/game/hooks/useGame"
 
@@ -33,7 +34,9 @@ export default function GameDetailsPage() {
         <AttributeList game={game} />
       </section>
 
-      <section className="flex-1">Right Section</section>
+      <section className="flex-1 space-y-4">
+        <Movie id={game.id} />
+      </section>
     </main>
   )
 }

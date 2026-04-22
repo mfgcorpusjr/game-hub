@@ -17,3 +17,12 @@ type Publisher = {
   id: number
   name: string
 }
+
+export type Movie = {
+  id: number
+  name: string
+  preview: string
+  data: {
+    480: string
+  }
+}
